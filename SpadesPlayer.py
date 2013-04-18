@@ -17,8 +17,11 @@ class SpadesPlayer:
 		self.hand = []
 		self.gameDeck = gameDeck
 
+	def getValue(self):
+		return self.hand
+
 	def gethand(self):
 		self.hand = SpadesDeck.DrawHand()
 
-	def getValue(self):
-		return self.hand
+	def playCard(self, card):
+		self.hand.remove(card)

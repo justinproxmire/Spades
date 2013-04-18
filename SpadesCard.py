@@ -11,7 +11,7 @@
 
 class SpadesCard:
 
-	def __init__(self, suit, faceVal, cardVal):
+	def __init__(self, suit, face_val, card_val):
 		self.suit = suit
-		self.faceVal = faceVal
-		self.cardVal = cardVal
+		self.face_val = face_val
+		self.card_val = card_val

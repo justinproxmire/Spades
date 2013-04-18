@@ -15,20 +15,20 @@ import SpadesCard
 class SpadesDeck:
 
 	def __init__(self):
-		heartsDeck = [SpadesCard.SpadesCard("Hearts", i + 2, i + 2) for i in range(13)]
-		diamondsDeck = [SpadesCard.SpadesCard("Diamonds", i + 2, i + 2) for i in range(13)]
-		clubsDeck = [SpadesCard.SpadesCard("Clubs", i + 2, i + 2) for i in range(13)]
-		spadesDeck = [SpadesCard.SpadesCard("Spades", i + 2, i + 32) for i in range(13)]
+		hearts_deck = [SpadesCard.SpadesCard("Hearts", i + 2, i + 2) for i in range(13)]
+		diamonds_deck = [SpadesCard.SpadesCard("Diamonds", i + 2, i + 2) for i in range(13)]
+		clubs_deck = [SpadesCard.SpadesCard("Clubs", i + 2, i + 2) for i in range(13)]
+		spades_deck = [SpadesCard.SpadesCard("Spades", i + 2, i + 32) for i in range(13)]
 
-		self.deck = heartsDeck + diamondsDeck + clubsDeck + spadesDeck
+		self.deck = hearts_deck + diamonds_deck + clubs_deck + spades_deck
 		r.shuffle(self.deck)
 
-	def DrawCard(self):
+	def draw_card(self):
 		return self.deck.pop()
 
-	def DrawHand(self):
-		return [self.drawCard() for i in range(13)]
+	def draw_hand(self):
+		return [self.draw_card() for i in range(13)]
 
 if __name__ == "__main__":
-	thedeck = SpadesDeck()
-	print thedeck.DrawHand()
+	the_deck = SpadesDeck()
+	print the_deck.draw_hand()

@@ -9,3 +9,15 @@
 # NOTES:					CS5300 - Final Project 2013
 # ***********************************************
 
+from pybrain.rl.environments.environment import Environment
+import SpadesPlayer
+
+class SpadesEnv(Environment):
+
+	def __init__(self, game_deck):
+		self.game_deck = game_deck
+		self.in_dim = None
+		self.out_dim = None
+
+	
+
