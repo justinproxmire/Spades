@@ -10,14 +10,25 @@
 # ***********************************************
 
 import random as r
-import SpadesCard as SpadesCard
+import SpadesCard
 
 class SpadesDeck:
 
 	def __init__(self):
-		self.deck = [SpadesCard.SpadesCard()] * 52
+		heartsDeck = [SpadesCard.SpadesCard("Hearts", i + 2, i + 2) for i in range(13)]
+		diamondsDeck = [SpadesCard.SpadesCard("Diamonds", i + 2, i + 2) for i in range(13)]
+		clubsDeck = [SpadesCard.SpadesCard("Clubs", i + 2, i + 2) for i in range(13)]
+		spadesDeck = [SpadesCard.SpadesCard("Spades", i + 32, i + 32) for i in range(13)]
 
+		self.deck = heartsDeck + diamondsDeck + clubsDeck + spadesDeck
+		r.shuffle(self.deck)
+
+	def drawCard(self):
+		return self.deck.pop()
+
+	def drawHand(self):
+		return [self.drawCard() for i in range(13)]
 
 if __name__ == "__main__":
 	thedeck = SpadesDeck()
-	print thedeck.deck[0].suit
+	print thedeck.drawHand()
