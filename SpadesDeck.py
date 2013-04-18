@@ -15,8 +15,9 @@ import SpadesCard as SpadesCard
 class SpadesDeck:
 
 	def __init__(self):
-		deck = [SpadesCard] * 52
-		print deck;
+		self.deck = [SpadesCard.SpadesCard()] * 52
+
 
 if __name__ == "__main__":
 	thedeck = SpadesDeck()
+	print thedeck.deck[0].suit
