@@ -15,10 +15,10 @@ import SpadesCard
 class SpadesDeck:
 
 	def __init__(self):
-		hearts_deck = [SpadesCard.SpadesCard("Hearts", i + 2, i + 2) for i in range(13)]
-		diamonds_deck = [SpadesCard.SpadesCard("Diamonds", i + 2, i + 2) for i in range(13)]
-		clubs_deck = [SpadesCard.SpadesCard("Clubs", i + 2, i + 2) for i in range(13)]
-		spades_deck = [SpadesCard.SpadesCard("Spades", i + 2, i + 32) for i in range(13)]
+		hearts_deck = [SpadesCard.SpadesCard("Hearts", i, i) for i in xrange(2,15)]
+		diamonds_deck = [SpadesCard.SpadesCard("Diamonds", i, i) for i in xrange(2,15)]
+		clubs_deck = [SpadesCard.SpadesCard("Clubs", i, i) for i in xrange(2,15)]
+		spades_deck = [SpadesCard.SpadesCard("Spades", i, i + 30) for i in xrange(2,15)]
 
 		self.deck = hearts_deck + diamonds_deck + clubs_deck + spades_deck
 		r.shuffle(self.deck)
