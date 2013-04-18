@@ -29,6 +29,5 @@ class SpadesDeck:
 	def draw_hand(self):
 		return [self.draw_card() for i in range(13)]
 
-if __name__ == "__main__":
-	the_deck = SpadesDeck()
-	print the_deck.draw_hand()
+
+	

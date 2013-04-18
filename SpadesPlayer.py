@@ -14,14 +14,11 @@ import SpadesDeck
 class SpadesPlayer:
 
 	def __init__(self,game_deck):
-		self.hand = get_hand()
 		self.gameDeck = game_deck
-
+		self.hand = SpadesDeck.SpadesDeck.draw_hand(self.gameDeck)
+		
 	def get_value(self):
 		return self.hand
-
-	def get_hand(self):
-		self.hand = SpadesDeck.draw_hand()
 
 	def play_card(self, card):
 		self.hand.remove(card)
