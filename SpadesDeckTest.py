@@ -27,4 +27,6 @@ class SpadesDeckTest:
         return self.deck.pop() 
 
     def draw_hand(self):
-        return [self.draw_card() for i in range(4)].sort()
+        hand =  [self.draw_card() for i in range(4)]
+        hand.sort(key=lambda x: x.card_val)
+        return hand

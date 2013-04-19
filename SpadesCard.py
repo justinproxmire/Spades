@@ -15,6 +15,3 @@ class SpadesCard:
 		self.suit = suit
 		self.face_val = face_val
 		self.card_val = card_val
-		
-	def sort(self):
-		self.hand.sort(cmp=self.card_val, key=None, reverse=False)
