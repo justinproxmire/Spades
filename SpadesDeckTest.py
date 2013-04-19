@@ -12,7 +12,7 @@
 import random as r
 import SpadesCard
 
-class SpadesDeck:
+class SpadesDeckTest:
 
     def __init__(self):
         hearts_deck = [SpadesCard.SpadesCard("Hearts", i, i) for i in xrange(2,6)]
