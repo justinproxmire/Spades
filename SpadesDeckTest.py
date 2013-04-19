@@ -24,7 +24,7 @@ class SpadesDeckTest:
         r.shuffle(self.deck)
 
     def draw_card(self):
-        return self.deck.pop()
+        return self.deck.pop() 
 
     def draw_hand(self):
-        return [self.draw_card() for i in range(13)]
+        return [self.draw_card() for i in range(4)].sort()

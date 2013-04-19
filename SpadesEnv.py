@@ -16,17 +16,17 @@ import SpadesDeck
 
 class SpadesEnv(Environment):
 
-    # the number of action values the environment accepts
-    indim = 4
+	# the number of action values the environment accepts
+	indim = 4
 
-    # the number of sensor values the environment produces
-    outdim = 1
+	# the number of sensor values the environment produces
+	outdim = 1
 
-    # discrete state space
-    discreteStates = True
+	# discrete state space
+	discreteStates = True
 
-    # discrete action space
-    discreteActions = True
+	# discrete action space
+	discreteActions = True
 
 
 	def __init__(self, game_deck):
