@@ -22,12 +22,14 @@ from pybrain.rl.experiments import Experiment
 from pybrain.rl.explorers import EpsilonGreedyExplorer, DiscreteStateDependentExplorer
 
 gamesPlayed = 0
+lastWinner = None
 
 if __name__ == "__main__":
 	
     the_deck = SpadesDeckTest.SpadesDeckTest()
+    the_env = SpadesEnv.SpadesEnv()
 
-		players = [sp(the_deck) for x in range(4)]
+		players = [sp(the_deck, the_env) for x in range(4)]
 		players[0].learner = Q(0.0, 0.0)
 		players[0].learner._setExplorer(EpsilonGreedyExplorer(0.0,0.0))
 		players[0].agent = LearningAgent(players[0].av_table, players[0].learner)
@@ -46,3 +48,27 @@ if __name__ == "__main__":
 
     print "Done creating players\n"
 
+    #play game
+
+def playGame(task, env, agent):
+
+	tricksWon = [0] * 4
+
+	currentPlayer = lastWinner ? lastWinner : r.randint(1, 4)
+	for x in range (4):
+		for i in range (4):
+			currentPlayer = currentPlayer % 4 == 0 ? 0 : currentPlayer
+			print "Player",currentPlayer,"'s Turn"
+
+			thePlayer = players[currentPlayer]
+			thePlayer.agent.integrateObservation(thePlayer.task.getObservation())
+			card_played = thePlayer.play_card(thePlayer.agent.getAction())
+			the_env.trick.append({'playerIndex': currentPlayer, 'cardPlayed': card_played})
+
+			currentPlayer += 1
+		the_env.trick.sort(key = lambda x: x.cardPlayed.card_val)
+		tricksWon[the_env.trick[0].playerIndex] += 1
+	return tricksWon.index(tricksWon.max())
+
+
+	
