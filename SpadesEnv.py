@@ -13,6 +13,7 @@ from pybrain.rl.environments.environment import Environment
 import numpy as np
 import SpadesPlayer
 import SpadesDeck
+import SpadesHand
 
 class SpadesEnv(Environment):
 
@@ -36,12 +37,14 @@ class SpadesEnv(Environment):
 		"""
 			Get the internal state of the environment.  Returns a numpy array of doubles.
 		"""
+
 		return np.array()
 
 	def performAction(self, action):
 		"""
 			Action is a numpy array of doubles.  No return value.
 		"""
+		
 
 	def reset(self):
 		"""
