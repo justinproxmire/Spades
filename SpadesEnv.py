@@ -13,7 +13,6 @@ from pybrain.rl.environments.environment import Environment
 import numpy as np
 import SpadesPlayer
 import SpadesDeck
-import SpadesHand
 
 class SpadesEnv(Environment):
 

@@ -12,7 +12,7 @@
 import SpadesDeckTest
 import SpadesEnv
 import SpadesTask
-import pickle
+import copy
 from pybrain.rl.agents import LearningAgent
 from pybrain.rl.learners.valuebased import ActionValueTable
 
@@ -27,7 +27,7 @@ class SpadesPlayer:
 		self.av_table = ActionValueTable(4, 1)
 		self.av_table.initialize(0.0)
 		self.env = game_env
-		self.task = SpadesTask(self.env)
+		self.task = SpadesTask.SpadesTask(game_env)
 		self.agent = None
 		self.learner = None
 
@@ -36,7 +36,7 @@ class SpadesPlayer:
 		return self.hand
 
 	def play_card(self, cardindex):
-		retCard = pickle.copy(hand[cardindex])
-		self.hand.remove(hand[cardindex])
+		retCard = copy.copy(self.hand[cardindex])
+		self.hand.remove(self.hand[cardindex])
 		return retCard
 		

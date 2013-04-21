@@ -11,7 +11,7 @@
 
 from scipy import clip, asarray
 from pybrain.rl.environments.task import Task
-from numpy import numpy as np
+import numpy as np
 
 class SpadesTask(Task):
 
