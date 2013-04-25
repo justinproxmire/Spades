@@ -73,9 +73,9 @@ if __name__ == "__main__":
     print "Done creating players\n"
 
     winner_count = [0,0,0,0]
-    for i in range(2):
-        winner = playGame(the_env)
-        winner_count[winner]+=1
-        SpadesDeckTest.SpadesDeckTest.reset()
+
+    winner = playGame(the_env)
+    winner_count[winner]+=1
+
     print winner_count
 
