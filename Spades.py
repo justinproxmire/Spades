@@ -1,13 +1,11 @@
-# PROGRAM:				Spades - Spades.py
-# AUTHORS:				
-# DATE:						4/17/13
-# DESCRIPTION:		
-# MODULES:		
-#			
-#			
-#	
-# NOTES:					CS5300 - Final Project 2013
+# PROGRAM:          Spades - Spades.py
+# AUTHORS:		    Justin Proxmire, Josh Inniger, Justin Hill
+# DATE:			    4/17/13
+# DESCRIPTION:		Spades PyBrain learning network main
+# MODULES:		    playGame(environment) - plays a single game of spades using the given environment, learning agents, and players
+# NOTES:			CS5300 - Final Project 2013
 # ***********************************************
+
 import SpadesTask
 import SpadesEnv
 import SpadesDeckTest

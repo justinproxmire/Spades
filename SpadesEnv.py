@@ -1,11 +1,10 @@
 # PROGRAM:				Spades - SpadesEnv.py
-# AUTHORS:				
+# AUTHORS:				Justin Proxmire, Josh Inniger, Justin Hill
 # DATE:						4/17/13
 # DESCRIPTION:		Spades environment class.
-# MODULES:		
-#			
-#			
-#	
+# MODULES:				getSensors() - get the internal state of the environment, used with PyBrain learning agents
+#									performAction() - unimplimented
+#									reset() - resets th game deck for the environment
 # NOTES:					CS5300 - Final Project 2013
 # ***********************************************
 

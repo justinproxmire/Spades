@@ -1,11 +1,8 @@
 # PROGRAM:				Spades - SpadesCard.py
-# AUTHORS:				
+# AUTHORS:				Justin Proxmire, Josh Inniger, Justin Hill
 # DATE:						4/17/13
 # DESCRIPTION:		Spades deck class. Sets up deck with their values for spades.
-# MODULES:		
-#			
-#			
-#	
+# MODULES:				N/A (initialization only)
 # NOTES:					CS5300 - Final Project 2013
 # ***********************************************
 
