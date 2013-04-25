@@ -29,20 +29,24 @@ def playGame(env):
 
     tricksWon = [0] * 4
     currentPlayer = lastWinner if lastWinner else r.randint(0, 3)
+    #currentPlayer = 0
     for x in range (4):
         for i in range (4):
-            currentPlayer = currentPlayer % 4 == 0 if 0 else currentPlayer
+            currentPlayer = 0 if currentPlayer % 4 == 0 else currentPlayer
             print "Player",currentPlayer,"'s Turn"
 
             thePlayer = players[currentPlayer]
             thePlayer.agent.integrateObservation(thePlayer.task.getObservation())
             card_played = thePlayer.play_card(int(thePlayer.agent.getAction()))
             env.trick.append({'playerIndex': currentPlayer, 'cardPlayed': card_played})
-
-        currentPlayer += 1
+            currentPlayer += 1
+        
         env.trick.sort(key = lambda x: x["cardPlayed"].card_val)
-        tricksWon[env.trick[0]["playerIndex"]] += 1
-    return tricksWon.index(tricksWon.max())
+        tricksWon[env.trick[x]["playerIndex"]] += 1
+        print tricksWon
+        print "end of trick"
+    print "end of game"
+    return tricksWon.index(max(tricksWon))
 
 if __name__ == "__main__":
 
@@ -69,8 +73,9 @@ if __name__ == "__main__":
     print "Done creating players\n"
 
     winner_count = [0,0,0,0]
-    for i in range(1000):
+    for i in range(2):
         winner = playGame(the_env)
         winner_count[winner]+=1
+        SpadesDeckTest.SpadesDeckTest.reset()
     print winner_count
 

@@ -12,7 +12,7 @@
 from pybrain.rl.environments.environment import Environment
 import numpy as np
 import SpadesPlayer
-import SpadesDeck
+import SpadesDeckTest
 
 class SpadesEnv(Environment):
 
@@ -51,7 +51,8 @@ class SpadesEnv(Environment):
 		"""
 			Resets the environment's internal state.  No return value.
 		"""
-		self.game_deck = SpadesDeck()
+		self.game_deck = SpadesDeckTest.SpadesDeckTest.reset()
+		print self.game_deck
 		self.trick = []
 		
 		

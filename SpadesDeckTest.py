@@ -30,3 +30,12 @@ class SpadesDeckTest:
         hand =  [self.draw_card() for i in range(4)]
         hand.sort(key=lambda x: x.card_val)
         return hand
+    
+    def reset(self):
+        hearts_deck = [SpadesCard.SpadesCard("Hearts", i, i) for i in xrange(2,6)]
+        diamonds_deck = [SpadesCard.SpadesCard("Diamonds", i, i) for i in xrange(2,6)]
+        clubs_deck = [SpadesCard.SpadesCard("Clubs", i, i) for i in xrange(2,6)]
+        spades_deck = [SpadesCard.SpadesCard("Spades", i, i + 30) for i in xrange(2,6)]
+
+        self.deck = hearts_deck + diamonds_deck + clubs_deck + spades_deck
+        r.shuffle(self.deck)

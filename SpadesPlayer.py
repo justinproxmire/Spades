@@ -40,4 +40,7 @@ class SpadesPlayer:
 		retCard = copy.copy(self.hand[cardindex])
 		self.hand.remove(self.hand[cardindex])
 		return retCard
+	
+	def get_new_hand(self):
+		self.hand = SpadesDeckTest.SpadesDeckTest.draw_hand(self.gameDeck)
 		
