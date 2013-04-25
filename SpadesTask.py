@@ -19,6 +19,24 @@ class SpadesTask(Task):
 		self.env = enviornment
 		#self.lastReward = 0 ??
 
-	def preformAction(self, action):
-		self.action = self.env.preformAction(action)
+	def performAction(self, action):
+		self.action = self.env.performAction(action)
 		return self.action
+	
+
+	def getObservation(self):
+		""" A filtered mapping to getSample of the underlying environment. """
+		sensors = self.env.getSensors()
+		return sensors
+	
+	#def getReward(self):
+		#if self.action == 0:
+			#give rewards 
+			
+	@property
+	def indim(self):
+		return self.env.indim
+
+	@property
+	def outdim(self):
+		return self.env.outdim

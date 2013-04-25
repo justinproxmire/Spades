@@ -17,10 +17,10 @@ import SpadesDeck
 class SpadesEnv(Environment):
 
 	# the number of action values the environment accepts
-	indim = 4
+	indim = 2
 
 	# the number of sensor values the environment produces
-	outdim = 1
+	outdim = 3
 
 	# discrete state space
 	discreteStates = True
@@ -31,13 +31,15 @@ class SpadesEnv(Environment):
 
 	def __init__(self, game_deck):
 		self.game_deck = game_deck
-
+		self.trick = []
+		
 	def getSensors(self):
 		"""
 			Get the internal state of the environment.  Returns a numpy array of doubles.
 		"""
-
-		return np.array()
+		the_trick =  [np.float32(self.trick[i].card_value) if i < len(self.trick) else float(0) for i in range(3)]
+		print the_trick
+		return the_trick
 
 	def performAction(self, action):
 		"""
@@ -50,3 +52,6 @@ class SpadesEnv(Environment):
 			Resets the environment's internal state.  No return value.
 		"""
 		self.game_deck = SpadesDeck()
+		self.trick = []
+		
+		
