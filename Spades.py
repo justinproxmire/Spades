@@ -36,12 +36,12 @@ def playGame(env):
 
             thePlayer = players[currentPlayer]
             thePlayer.agent.integrateObservation(thePlayer.task.getObservation())
-            card_played = thePlayer.play_card(thePlayer.agent.getAction())
+            card_played = thePlayer.play_card(int(thePlayer.agent.getAction()))
             env.trick.append({'playerIndex': currentPlayer, 'cardPlayed': card_played})
 
         currentPlayer += 1
-        env.trick.sort(key = lambda x: x.cardPlayed.card_val)
-        tricksWon[env.trick[0].playerIndex] += 1
+        env.trick.sort(key = lambda x: x["cardPlayed"].card_val)
+        tricksWon[env.trick[0]["playerIndex"]] += 1
     return tricksWon.index(tricksWon.max())
 
 if __name__ == "__main__":

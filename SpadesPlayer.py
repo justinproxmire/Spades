@@ -36,6 +36,7 @@ class SpadesPlayer:
 		return self.hand
 
 	def play_card(self, cardindex):
+		print cardindex
 		retCard = copy.copy(self.hand[cardindex])
 		self.hand.remove(self.hand[cardindex])
 		return retCard

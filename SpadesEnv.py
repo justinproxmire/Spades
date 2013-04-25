@@ -37,7 +37,8 @@ class SpadesEnv(Environment):
 		"""
 			Get the internal state of the environment.  Returns a numpy array of doubles.
 		"""
-		the_trick =  [np.float32(self.trick[i].card_value) if i < len(self.trick) else float(0) for i in range(3)]
+		print self.trick
+		the_trick =  [np.float32(self.trick[i]["cardPlayed"].card_val) if i < len(self.trick) else float(0) for i in range(1)]
 		print the_trick
 		return the_trick
 
@@ -45,7 +46,6 @@ class SpadesEnv(Environment):
 		"""
 			Action is a numpy array of doubles.  No return value.
 		"""
-		
 
 	def reset(self):
 		"""
