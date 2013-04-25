@@ -1,7 +1,7 @@
 # PROGRAM:				Spades - SpadesEnv.py
 # AUTHORS:				
 # DATE:						4/17/13
-# DESCRIPTION:		Spades environment class.  Don't really know what this does yet.
+# DESCRIPTION:		Spades environment class.
 # MODULES:		
 #			
 #			
